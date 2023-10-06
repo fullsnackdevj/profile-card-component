@@ -1,0 +1,213 @@
+:root {
+  /* ## Colors
+
+### Primary */
+
+  --clr-pr-cyan: hsl(185, 75%, 39%);
+  --clr-pr-dark-blue: hsl(229, 23%, 23%);
+  --clr-pr-gray-blue: hsl(227, 10%, 46%);
+
+  /* ### Neutrals */
+  --clr-nt-dark-gray: hsl(0, 0%, 59%);
+  --clr-nt-light-gray: hsla(0, 0%, 59%, 0.2);
+
+  /* ## Typography */
+
+  --ff-kumbh-sans: "Kumbh Sans", sans-serif;
+
+  /* ### font weights */
+  --fw-400: 400;
+  --fw-700: 700;
+}
+
+/* CSS RESET
+
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* general styles */
+
+/* body {
+  background-color: var(--clr-pr-cyan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+  margin: 1rem;
+
+  font-family: var(--ff-kumbh-sans);
+  font-size: 1.125rem;
+
+
+  background-image: url(./images/bg-pattern-top.svg),
+    url(./images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 45vw bottom 25vh, left 45vw top 44vh;
+} */
+
+body {
+  background-color: var(--clr-pr-cyan);
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  font-family: var(--ff-kumbh-sans);
+  font-size: 1.125rem;
+  background-image: url(./images/bg-pattern-top.svg),
+    url(./images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 50vw bottom 50vh, left 50vw top 50vh;
+}
+
+hr {
+  background-color: var(--clr-nt-light-gray);
+  height: 1px;
+  width: 100%;
+  border: none;
+  margin-top: 1.5rem;
+}
+
+/* card styles */
+
+/* .card {
+  box-shadow: 0px 20px 17px 0px rgba(0, 0, 0, 0.1);
+} */
+
+.card {
+  margin: 1rem;
+  max-width: 400px;
+}
+
+.card__contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #fff;
+
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card__contents .pattern_bg {
+  object-fit: cover;
+  width: 100%;
+}
+
+.card__contents .victor_img {
+  border-radius: 50px;
+  border: 4px solid #fff;
+  margin-top: -50px;
+}
+
+.profile_info {
+  margin-top: 1rem;
+}
+
+.profile_info h1 {
+  font-size: 1.2rem;
+}
+
+.profile_info span,
+p {
+  font-weight: var(--fw-400);
+  color: var(--clr-nt-dark-gray);
+  font-size: 1rem;
+}
+
+.bg-top {
+  /* position: absolute; */
+  left: 0;
+  top: 0;
+  z-index: -9999;
+}
+
+.bg-bottom {
+  /* position: absolute; */
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.profile_stats {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+}
+
+.profile_stats h2 {
+  font-size: 1.25rem;
+  font-weight: var(--fw-700);
+}
+
+.profile_stats p {
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+}
+
+.profile_stats > .stat_info p {
+  color: var(--clr-nt-dark-gray);
+}
